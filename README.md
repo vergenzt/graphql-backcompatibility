@@ -4,7 +4,7 @@ What changes can you make to your GraphQL schema if you can't break backcompat?
 
 ## String => Enum
 
-If you've got a field that should be an enum but was created as a string, then for the most part it's safe to change it to an enum. There are three cases I’ve come up with, and backcompat is maintained for two of the three--but there is one case that breaks. (All of the following assume that 
+If you've got a field that should be an enum but was created as a string, then for the most part it's safe to change it to an enum. There are three cases I’ve come up with, and backcompat is maintained for two of the three--but there is one case that breaks. (All of the following assume that a limited set of values are used for the string in practice; i.e. it acts as an enum.)
 
  1. :white_check_mark: Queries for a field do not break on string => enum type change. The value gets returned as a JSON string either way.
  
