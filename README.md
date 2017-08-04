@@ -16,6 +16,6 @@ If you've got a field that should be an enum but was created as a string, then f
 
  3. :x: Mutations with an input field whose type changes from string to enum _break_ if that enum is specified directly in the query.
 
-    E.g. if `putMyColorField` expects a String argument, then the inline mutation _must_ be written as `putMyColorField(value: "Red")`, i.e. with quotes. If it expects an enum value argument, then the value _must_ be written without quotes or the mutation fails, e.g. `putMyColorField(value: Red)`.
+    E.g. if `putMyColorField` expects a String argument, then the inline mutation _must_ be written as `mutation { putMyColorField(value: "Red") }`, i.e. with quotes. If it expects an enum value argument, then the value _must_ be written without quotes or the mutation fails, e.g. `mutation { putMyColorField(value: Red) }`.
     
     If your schema has clients that use behavior (3) then you cannot change the string to an enum without breaking those clients.
